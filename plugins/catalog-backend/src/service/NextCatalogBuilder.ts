@@ -83,14 +83,14 @@ import { Config } from '@backstage/config';
 import { Logger } from 'winston';
 import { LocationService } from './types';
 import { connectEntityProviders } from '../processing/connectEntityProviders';
-import { ServerPermissionClient } from '@backstage/plugin-permission-node';
+import { PermissionAuthorizer } from '@backstage/plugin-permission-common';
 
 export type CatalogEnvironment = {
   logger: Logger;
   database: PluginDatabaseManager;
   config: Config;
   reader: UrlReader;
-  permissions: ServerPermissionClient;
+  permissions: PermissionAuthorizer;
 };
 
 /**
