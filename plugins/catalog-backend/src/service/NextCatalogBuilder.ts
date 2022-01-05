@@ -386,18 +386,15 @@ export class NextCatalogBuilder {
       locationStore,
       orchestrator,
     );
-    const refreshService = new DefaultRefreshService({
-      database: processingDatabase,
-    });
-    const authorizedRefreshService = new AuthorizedRefreshService(
-      refreshService,
+    const refreshService = new AuthorizedRefreshService(
+      new DefaultRefreshService({ database: processingDatabase }),
       permissions,
     );
     const router = await createNextRouter({
       entitiesCatalog,
       locationAnalyzer,
       locationService,
-      authorizedRefreshService,
+      refreshService,
       logger,
       config,
     });
