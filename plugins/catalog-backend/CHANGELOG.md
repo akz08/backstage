@@ -1,5 +1,11 @@
 # @backstage/plugin-catalog-backend
 
+## 0.19.5
+
+### Patch Changes
+
+- 0ae759dad4: Add catalog permission rules.
+
 ## 0.19.4
 
 ### Patch Changes
